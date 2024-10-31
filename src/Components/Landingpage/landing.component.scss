@@ -1,70 +1,58 @@
-.container {
-    display: flex;
-    height: 100vh;
-  
-    .landing-side, .login-side {
-      flex: 1;
-      padding: 2rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  
-    .landing-side {
-      background-color: #00D950; // Verde brillante para la landing
-      color: #FFFFFF; // Blanco para el texto
-      text-align: center;
-  
-      h1 {
-        font-size: 3rem;
-        color: #FFFFFF;
-      }
-  
-      p {
-        font-size: 1.2rem;
-        margin-top: 1rem;
-      }
-  
-      button {
-        margin-top: 2rem;
-        background-color: #830096; // Morado oscuro
-        color: #FFFFFF;
-        padding: 1rem 2rem;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-      }
-    }
-  
-    .login-side {
-      background-color: #FFFFFF; // Blanco para el fondo del login
-      color: #000000; // Negro para el texto
-  
-      form {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 400px;
-  
-        label {
-          margin-bottom: 0.5rem;
-        }
-  
-        input {
-          margin-bottom: 1rem;
-          padding: 0.8rem;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-  
-        button {
-          background-color: #00D950; // Verde brillante
-          color: #FFFFFF;
-          padding: 0.8rem;
-          border: none;
-          cursor: pointer;
-          font-size: 1rem;
-        }
-      }
-    }
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  overflow: hidden;
+  background-image: url('./landingpageimage.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #FFFFFF;
+
+  h1 {
+    font-size: 3rem;
+    color: #FFFFFF;
+    margin-top: 100px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
   }
+
+  p {
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    margin-top: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  }
+
+  .button-container {
+    display: flex;
+    gap: 20px; /* Espacio entre los botones */
+    margin-top: 500px;
+  }
+  
+  button {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:nth-child(1) {
+    background-color: #00D950; /* Verde para el botón de Iniciar */
+  }
+  
+  button:nth-child(2) {
+    background-color: #BF2000; /* Rojo para el botón de Registrarse */
+  }
+  
+  button:hover {
+    opacity: 0.9; /* Ligero efecto de opacidad al pasar el mouse */
+  }
+}
