@@ -6,6 +6,7 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -17,15 +18,19 @@ import { isPlatformBrowser } from '@angular/common';
         Daylight.
       </p>
       <div class="button-container">
-        <button (click)="scrollToLogin()">Iniciar</button>
-        <button (click)="scrollToRegister()">Registrarse</button>
+        <button (click)="navigateToLogin()">Iniciar</button>
+        <button (click)="navigateToLogin()">Registrarse</button>
+        <button (click)="goToHome()">Invitado</button>
       </div>
     </div>
   `,
   styleUrls: ['./landing.component.scss'],
 })
 export class LandingComponent implements OnInit, OnDestroy {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
@@ -39,19 +44,14 @@ export class LandingComponent implements OnInit, OnDestroy {
     }
   }
 
-  scrollToLogin() {
-    if (isPlatformBrowser(this.platformId)) {
-      document
-        .querySelector('.login-container')
-        ?.scrollIntoView({ behavior: 'smooth' });
-    }
+  navigateToLogin() {
+    this.router.navigate(['/login']);
   }
 
-  scrollToRegister() {
-    // Lógica para el botón de "Registrarse" (puedes ajustar esta función según la ruta de registro)
+  goToHome() {
     if (isPlatformBrowser(this.platformId)) {
       document
-        .querySelector('.register-container')
+        .querySelector('.home-container')
         ?.scrollIntoView({ behavior: 'smooth' });
     }
   }

@@ -33,7 +33,7 @@
     gap: 20px; /* Espacio entre los botones */
     margin-top: 500px;
   }
-  
+
   button {
     padding: 0.5rem 1.5rem;
     font-size: 1.2rem;
@@ -43,15 +43,19 @@
     border-radius: 5px;
     transition: background-color 0.3s ease;
   }
-  
+
   button:nth-child(1) {
     background-color: #00D950; /* Verde para el botón de Iniciar */
   }
-  
+
   button:nth-child(2) {
     background-color: #BF2000; /* Rojo para el botón de Registrarse */
   }
-  
+
+  button:nth-child(3) {
+    background-color: #830096; /* Morado oscuro para el botón de Inicio */
+  }
+
   button:hover {
     opacity: 0.9; /* Ligero efecto de opacidad al pasar el mouse */
   }
