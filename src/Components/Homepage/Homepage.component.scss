@@ -1,0 +1,85 @@
+.homepage-container {
+  background-color: #ffffff; // Fondo blanco
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  overflow-y: auto; // Permitir el scroll vertical
+  overflow-x: hidden; // Deshabilita el scroll horizontal
+
+  .banner,
+  .filters-banner {
+    width: 100%;
+    margin: 0; // Elimina los márgenes entre los banners
+    padding: 0; // Elimina el relleno entre los banners
+  }
+
+  .banner {
+    background-color: #000000; // Fondo negro
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+  }
+
+  .filters-banner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000; // Fondo negro
+    color: #ffffff;
+    padding: 10px;
+    overflow-x: hidden; // Evita el scroll horizontal en los filtros
+
+    .filter {
+      margin-right: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      select {
+        padding: 5px;
+        border-radius: 5px;
+        border: none;
+      }
+    }
+
+    .search-bar {
+      padding: 5px;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .icon-button,
+    .refresh-button {
+      background-color: #333333; // Fondo gris
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      color: #ffffff; // Texto blanco
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #830096; // Color morado oscuro
+        color: #ffffff; // Texto blanco
+      }
+    }
+
+    // Intercambio de posición de los botones
+    .icon-button {
+      order: 2; // Coloca el botón de menú después del de refresh
+      margin-right: 10px;
+    }
+
+    .refresh-button {
+      order: 1; // Coloca el botón de refresh primero
+    }
+  }
+}

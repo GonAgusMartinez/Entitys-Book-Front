@@ -5,6 +5,7 @@ import {
   Inject,
   PLATFORM_ID,
 } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { isPlatformBrowser } from '@angular/common';
@@ -91,11 +92,21 @@ export class LoginComponent implements OnInit, OnDestroy {
   username: string = '';
   profilePicture: File | null = null;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     if (isPlatformBrowser(this.platformId)) {
       document.body.classList.add('login-page-active');
+
+      // Verifica si el parámetro 'register' está presente en la URL
+      this.route.queryParams.subscribe((params) => {
+        if (params['register']) {
+          this.showLoginForm = false; // Muestra el formulario de registro
+        }
+      });
     }
   }
 

@@ -19,7 +19,7 @@ import { Router } from '@angular/router';
       </p>
       <div class="button-container">
         <button (click)="navigateToLogin()">Iniciar</button>
-        <button (click)="navigateToLogin()">Registrarse</button>
+        <button (click)="navigateToRegister()">Registrarse</button>
         <button (click)="goToHome()">Invitado</button>
       </div>
     </div>
@@ -48,11 +48,11 @@ export class LandingComponent implements OnInit, OnDestroy {
     this.router.navigate(['/login']);
   }
 
+  navigateToRegister() {
+    this.router.navigate(['/login'], { queryParams: { register: true } });
+  }
+
   goToHome() {
-    if (isPlatformBrowser(this.platformId)) {
-      document
-        .querySelector('.home-container')
-        ?.scrollIntoView({ behavior: 'smooth' });
-    }
+    this.router.navigate(['/homepage']);
   }
 }
