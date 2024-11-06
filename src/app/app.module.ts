@@ -1,7 +1,9 @@
+// app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LandingComponent } from '../Components/Landingpage/landing.component';
@@ -13,7 +15,8 @@ import { appRoutes } from './app.routes';
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes), // Asegúrate de tener RouterModule aquí
+    HttpClientModule, // HttpClientModule debe estar aquí
+    RouterModule.forRoot(appRoutes),
   ],
   bootstrap: [AppComponent],
 })
